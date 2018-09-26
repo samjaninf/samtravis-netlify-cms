@@ -6,6 +6,7 @@ import { graphql, Link } from 'gatsby'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
 import ImageViewer from "../components/ImageViewer"
+import ObjViewer from "../components/ObjViewer"
 import { ContentFrame, ContentFooter } from "../components/ContentFrame";
 import Carousel, {
   CarouselNavigation,
@@ -42,7 +43,11 @@ class ProjectPage extends React.Component {
           <Carousel frame={frame}>
             {[].concat(
               slides.map((slide, index) =>
-                <ImageViewer key={index} src={slide.file} />
+                slide.type === "image" ?
+                  <ImageViewer key={index} src={slide.file} />
+                  : slide.type === "3dobject" ?
+                    <ObjViewer key={index} src={slide.file} />
+                    : null
               ),
               <Grid>
                 <GridColumn />
@@ -56,6 +61,14 @@ class ProjectPage extends React.Component {
               </Grid>
             )}
           </Carousel>
+          <CarouselPrev
+            onClick={() =>
+              this.setFrame((numFrames + this.state.frame - 1) % numFrames)}
+          />
+          <CarouselNext
+            onClick={() =>
+              this.setFrame((numFrames + this.state.frame + 1) % numFrames)}
+          />
         </ContentFrame>
         <ContentFooter>
           <CarouselNavigation
