@@ -1,6 +1,6 @@
 ---
 templateKey: project-page
-title: Test Project 1
+title: Test Project 2
 type: creative
 image: /img/chemex.jpg
 slides:

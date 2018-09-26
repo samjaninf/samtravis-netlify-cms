@@ -2,13 +2,16 @@ import React from 'react'
 import Helmet from 'react-helmet'
 
 import Navbar from '../components/Navbar'
-import './all.sass'
+import Header from '../components/Header'
+import './index.css'
 
 const TemplateWrapper = ({ children }) => (
-  <div>
-    <Helmet title="Home | Gatsby + Netlify CMS" />
-    <Navbar />
-    <div>{children}</div>
+  <div className="Page transition-item">
+    <Helmet title="Home | Samuel J Travis" />
+    <div className="Main">
+      <Header />
+      {children}
+    </div>
   </div>
 )
 

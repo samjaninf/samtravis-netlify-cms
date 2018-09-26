@@ -1,7 +1,7 @@
 ---
 templateKey: project-page
-title: Test Project 1
-type: creative
+title: Test Project 3 (Commercial)
+type: commercial
 image: /img/chemex.jpg
 slides:
   - file: /img/flavor_wheel.jpg
