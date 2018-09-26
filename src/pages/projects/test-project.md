@@ -3,6 +3,7 @@ templateKey: project-page
 title: Test Project 1
 type: creative
 image: /img/chemex.jpg
+imageHover: /img/products-grid3.jpg
 slides:
   - file: /img/flavor_wheel.jpg
     type: image
