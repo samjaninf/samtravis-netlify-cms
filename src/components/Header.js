@@ -64,6 +64,7 @@ const CommercialNav = () =>
     {localStorage.getItem("password") !== PASSWORD && redirect("/")}
     {projectsList.map(project =>
       <Link
+        key={project.id}
         to={`/commercial/${project.id}`}
         activeClassName="Header__Navigation__Item--Active"
       >
@@ -118,14 +119,14 @@ class Header extends Component {
 
           {passwordCorrect && [
             <Link
-              exact
+              key="creative"
               to={`/`}
               activeClassName="Header__Navigation__Item--Active"
             >
               Creative
             </Link>,
             <Link
-              exact
+              key="commercial"
               to={`/commercial`}
               activeClassName="Header__Navigation__Item--Active"
             >
@@ -151,7 +152,9 @@ class Header extends Component {
             About
           </div>
         </div>
-        {/* <Route path="/commercial" component={CommercialNav} /> */}
+
+
+        {false && <CommercialNav />}
 
         <div className={cx("Header__Menu", { "Header__Menu--Open": open })}>
           <Grid>

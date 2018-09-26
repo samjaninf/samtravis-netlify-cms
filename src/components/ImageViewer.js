@@ -39,7 +39,7 @@ export default class ImageViewer extends Component {
     };
   }
 
-  componentWillMount() {
+  componentDidMount() {
     if (typeof Image !== 'undefined') {
       const img = new Image();
       img.src = this.props.src;

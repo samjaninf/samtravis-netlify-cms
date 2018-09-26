@@ -1,10 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { kebabCase } from 'lodash'
-import Helmet from 'react-helmet'
-import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
-import Content, { HTMLContent } from '../components/Content'
+import { HTMLContent } from '../components/Content'
 import ImageViewer from "../components/ImageViewer"
 import ObjViewer from "../components/ObjViewer"
 import { ContentFrame, ContentFooter } from "../components/ContentFrame";
@@ -31,7 +29,7 @@ class ProjectPage extends React.Component {
 
   render() {
     const { frame } = this.state;
-    const { data, location, match } = this.props;
+    const { data } = this.props;
     const { markdownRemark: post } = data
     const { html, frontmatter } = post;
     const { title, slides } = frontmatter;
@@ -49,7 +47,7 @@ class ProjectPage extends React.Component {
                     <ObjViewer key={index} src={slide.file} />
                     : null
               ),
-              <Grid>
+              <Grid key="grid">
                 <GridColumn />
                 <GridColumn>
                   <h2>

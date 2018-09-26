@@ -17,8 +17,9 @@ class Carousel extends Component {
                                 left: -styles.x + "%"
                             }}
                         >
-                            {children.map(child =>
+                            {children.map((child, index) =>
                                 <div
+                                    key={index}
                                     className="Carousel_Slide"
                                     style={{
                                         width: 100 / count + "%"
@@ -39,6 +40,7 @@ const CarouselNavigation = ({ frame, frames, onChange }) =>
         <div className="CarouselNavigation__Items">
             {Array.apply(null, { length: frames }).map((_, index) =>
                 <div
+                    key={index}
                     className="CarouselNavigation__Item"
                     onClick={() => onChange(index)}
                 />

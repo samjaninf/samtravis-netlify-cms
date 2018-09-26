@@ -16,8 +16,8 @@ export default ({ src, hoverSrc, title }) => (
                 }}
             />
         </div>
-        <div class="HomeTile__Info">
-            <div class="HomeTile__Title">{title}</div>
+        <div className="HomeTile__Info">
+            <div className="HomeTile__Title">{title}</div>
         </div>
     </div>
 );

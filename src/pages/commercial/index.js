@@ -1,20 +1,20 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import { Link, graphql } from 'gatsby'
+// import PropTypes from 'prop-types'
+// import { Link, graphql } from 'gatsby'
 import Layout from '../../components/Layout'
-import { ContentFrame } from "../../components/ContentFrame";
-import HomeTile from "../../components/HomeTile";
+// import { ContentFrame } from "../../components/ContentFrame";
+// import HomeTile from "../../components/HomeTile";
 
 export default class IndexPage extends React.Component {
-    render() {
-        // const { data } = this.props
-        // const { edges: projects } = data.allMarkdownRemark
+  render() {
+    // const { data } = this.props
+    // const { edges: projects } = data.allMarkdownRemark
 
-        // console.log(projects)
+    // console.log(projects)
 
-        return (
-            <Layout>
-                ABC
+    return (
+      <Layout>
+        ABC
                 {/* <ContentFrame>
                     {projects.map(({ node: project }) => (
                         <Link key={project.fields.slug} to={project.fields.slug}>
@@ -26,9 +26,9 @@ export default class IndexPage extends React.Component {
                         </Link>
                     ))}
                 </ContentFrame> */}
-            </Layout>
-        )
-    }
+      </Layout>
+    )
+  }
 }
 
 // IndexPage.propTypes = {
