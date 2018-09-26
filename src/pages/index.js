@@ -20,7 +20,7 @@ export default class IndexPage extends React.Component {
               <HomeTile
                 title={project.frontmatter.title}
                 src={project.frontmatter.image}
-                hoverSrc={"def.jpg"}
+                hoverSrc={project.frontmatter.imageHover}
               />
             </Link>
           ))}
