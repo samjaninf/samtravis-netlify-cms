@@ -102,7 +102,7 @@
     right: 0px;
     height: 0px;
     overflow: hidden;
-    background-color: #cbd4f0;
+    background-color: #ffffff;
     z-index: 1000;
     transition: 0.3s ease-in-out height;
   }
@@ -122,7 +122,7 @@
     width: 100%;
     box-sizing: border-box;
     border: 1px solid #000;
-    background-color: #cbd4f0;
+    background-color: #ffffff;
     outline: none;
   }
   
