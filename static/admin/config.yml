@@ -6,6 +6,20 @@ media_folder: static/img
 public_folder: /img
 
 collections:
+
+  - name: "project"
+    label: "Project"
+    folder: "src/pages/projects"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "project-page"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Type", name: "type", widget: "select", options: ["creative", "commercial"]}
+      - {label: Image, name: image, widget: image}
+      - {label: Slides, name: slides, widget: list, fields: [{label: "Type", name: type, widget: select, options: ["image", "3dobject"]}, {label: "Title", name: title, widget: string}, {label: "File", name: file, widget: file}]}
+      - {label: "Body", name: "body", widget: "markdown"}
+
   - name: "blog"
     label: "Blog"
     folder: "src/pages/blog"
