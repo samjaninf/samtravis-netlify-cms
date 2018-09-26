@@ -5,6 +5,7 @@ import Layout from '../components/Layout'
 import { HTMLContent } from '../components/Content'
 import ImageViewer from "../components/ImageViewer"
 import ObjViewer from "../components/ObjViewer"
+import VideoViewer from "../components/VideoViewer"
 import { ContentFrame, ContentFooter } from "../components/ContentFrame";
 import Carousel, {
   CarouselNavigation,
@@ -25,6 +26,16 @@ const CommercialNav = ({ projects }) =>
       </Link>
     )}
   </div>;
+
+const MediaSlide = (slide, index, currentSlide) => {
+  return slide.type === "image" ?
+    <ImageViewer key={index} src={slide.file} /> :
+    slide.type === "video" ?
+      <VideoViewer key={index} src={slide.url} poster={slide.file} visible={index === currentSlide} />
+      : slide.type === "3dobject" ?
+        <ObjViewer key={index} src={slide.file} />
+        : null
+}
 
 class ProjectPage extends React.Component {
   constructor() {
@@ -62,13 +73,7 @@ class ProjectPage extends React.Component {
           </GridColumn>
           <GridColumn width={2}>
             <Carousel frame={frame}>
-              {slides.map((slide, index) =>
-                slide.type === "image" ?
-                  <ImageViewer key={index} src={slide.file} />
-                  : slide.type === "3dobject" ?
-                    <ObjViewer key={index} src={slide.file} />
-                    : null
-              )}
+              {slides.map((slide, index) => MediaSlide(slide, index, this.state.frame))}
             </Carousel>
             <CarouselPrev
               onClick={() =>
@@ -93,13 +98,7 @@ class ProjectPage extends React.Component {
           <ContentFrame>
             <Carousel frame={frame}>
               {[].concat(
-                slides.map((slide, index) =>
-                  slide.type === "image" ?
-                    <ImageViewer key={index} src={slide.file} />
-                    : slide.type === "3dobject" ?
-                      <ObjViewer key={index} src={slide.file} />
-                      : null
-                ),
+                slides.map(MediaSlide),
                 <Grid key="grid">
                   <GridColumn />
                   <GridColumn>
@@ -143,38 +142,39 @@ export default ProjectPage
 
 export const pageQuery = graphql`
   query ProjectPageByID($id: String!) {
-    allMarkdownRemark(
-      sort: { order: DESC, fields: [frontmatter___date] },
-      filter: { frontmatter: {
-        templateKey: { eq: "project-page" }
-        type: { eq: "commercial" }
-      }}
+          allMarkdownRemark(
+            sort: {order: DESC, fields: [frontmatter___date] },
+      filter: {frontmatter: {
+          templateKey: {eq: "project-page" }
+        type: {eq: "commercial" }
+    }}
     ) {
-      edges {
+          edges {
         node {
           id
           fields {
-            slug
-          }
-          frontmatter {
-            title
-          }
+          slug
+        }
+        frontmatter {
+          title
+        }
         }
       }
-    }    
-    markdownRemark(id: { eq: $id }) {
-      id
+    }
+    markdownRemark(id: {eq: $id }) {
+          id
       html
-      frontmatter {
-        date(formatString: "MMMM DD, YYYY")
-        title
-        description
-        type
+        frontmatter {
+          date(formatString: "MMMM DD, YYYY")
+      title
+      description
+      type
         slides {
-            type
-            file
+          type
+          file
+          url
         }
       }
     }
   }
-`
+  `

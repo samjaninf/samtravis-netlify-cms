@@ -1,0 +1,10 @@
+.VideoViewer {
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    transition: opacity ease-in-out 0.3s;
+}
+
+.VideoViewer--Hidden {
+    opacity: 0;;
+}
