@@ -40,16 +40,20 @@ export default class ImageViewer extends Component {
   }
 
   componentWillMount() {
-    const img = new Image();
-    img.src = this.props.src;
-    img.onload = () => {
-      this.setState({
-        width: img.width,
-        height: img.height
-      });
-    };
-    window.addEventListener("mousemove", this.move);
-    window.addEventListener("mouseup", this.endDrag);
+    if (typeof Image !== 'undefined') {
+      const img = new Image();
+      img.src = this.props.src;
+      img.onload = () => {
+        this.setState({
+          width: img.width,
+          height: img.height
+        });
+      };
+    }
+    if (typeof window !== 'undefined') {
+      window.addEventListener("mousemove", this.move);
+      window.addEventListener("mouseup", this.endDrag);
+    }
   }
 
   componentWillUnmount() {

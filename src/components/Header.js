@@ -4,43 +4,48 @@ import Grid, { GridColumn } from "../components/Grid";
 import cx from "classnames";
 import "./Header.css";
 
+const localStorage = typeof window !== 'undefined' ? window.localStorage : {
+  getItem: () => { },
+  setItem: () => { }
+}
+
 const projects = {
-    "first-commercial-project": {
-      "name": "Commercial Project 1",
-      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n\nDonec tristique sapien quis bibendum imperdiet. Nunc ornare euismod elit, vel molestie magna tempus ut. Fusce convallis turpis magna. Quisque aliquet fermentum est, sit amet accumsan diam pharetra eu. Cras a mi a magna dapibus consequat. Nullam fringilla ut ante id iaculis. Vestibulum quis tortor lorem. Aliquam et varius enim, ut egestas arcu. Phasellus sollicitudin nisl leo, sit amet facilisis ex blandit sit amet. Aliquam venenatis est tempor dolor placerat iaculis. Phasellus ornare orci ac lacus vehicula, eu viverra nunc egestas. Curabitur lacinia sem mi, ac ultrices dui egestas eget. Pellentesque sollicitudin ante et rutrum commodo. Duis id mauris ut augue condimentum aliquet sit amet vitae dolor. Mauris aliquet commodo laoreet. Vestibulum ultrices ante eget dolor dictum, vitae gravida nunc cursus.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tristique sapien quis bibendum imperdiet. Nunc ornare euismod elit, vel molestie magna tempus ut. Fusce convallis turpis magna. Quisque aliquet fermentum est, sit amet accumsan diam pharetra eu. Cras a mi a magna dapibus consequat. Nullam fringilla ut ante id iaculis. Vestibulum quis tortor lorem. Aliquam et varius enim, ut egestas arcu. Phasellus sollicitudin nisl leo, sit amet facilisis ex blandit sit amet. Aliquam venenatis est tempor dolor placerat iaculis. Phasellus ornare orci ac lacus vehicula, eu viverra nunc egestas. Curabitur lacinia sem mi, ac ultrices dui egestas eget. Pellentesque sollicitudin ante et rutrum commodo. Duis id mauris ut augue condimentum aliquet sit amet vitae dolor. Mauris aliquet commodo laoreet. Vestibulum ultrices ante eget dolor dictum, vitae gravida nunc cursus.",
-      "images": ["/img/test2.jpg", "/img/test1a.jpg"]
-    },
-    "second-commercial-project": {
-      "name": "Commercial Project 2",
-      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n\nDonec tristique sapien quis bibendum imperdiet. Nunc ornare euismod elit, vel molestie magna tempus ut. Fusce convallis turpis magna. Quisque aliquet fermentum est, sit amet accumsan diam pharetra eu. Cras a mi a magna dapibus consequat. Nullam fringilla ut ante id iaculis. Vestibulum quis tortor lorem. Aliquam et varius enim, ut egestas arcu. Phasellus sollicitudin nisl leo, sit amet facilisis ex blandit sit amet. Aliquam venenatis est tempor dolor placerat iaculis. Phasellus ornare orci ac lacus vehicula, eu viverra nunc egestas. Curabitur lacinia sem mi, ac ultrices dui egestas eget. Pellentesque sollicitudin ante et rutrum commodo. Duis id mauris ut augue condimentum aliquet sit amet vitae dolor. Mauris aliquet commodo laoreet. Vestibulum ultrices ante eget dolor dictum, vitae gravida nunc cursus.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tristique sapien quis bibendum imperdiet. Nunc ornare euismod elit, vel molestie magna tempus ut. Fusce convallis turpis magna. Quisque aliquet fermentum est, sit amet accumsan diam pharetra eu. Cras a mi a magna dapibus consequat. Nullam fringilla ut ante id iaculis. Vestibulum quis tortor lorem. Aliquam et varius enim, ut egestas arcu. Phasellus sollicitudin nisl leo, sit amet facilisis ex blandit sit amet. Aliquam venenatis est tempor dolor placerat iaculis. Phasellus ornare orci ac lacus vehicula, eu viverra nunc egestas. Curabitur lacinia sem mi, ac ultrices dui egestas eget. Pellentesque sollicitudin ante et rutrum commodo. Duis id mauris ut augue condimentum aliquet sit amet vitae dolor. Mauris aliquet commodo laoreet. Vestibulum ultrices ante eget dolor dictum, vitae gravida nunc cursus.",
-      "images": [
-        "/img/test1a.jpg",
-        "/img/test2.jpg",
-        "/img/test1a.jpg",
-        "/img/test1a.jpg",
-        "/img/test2.jpg",
-        "/img/test2.jpg",
-        "/img/test1a.jpg",
-        "/img/test1a.jpg",
-        "/img/test2.jpg",
-        "/img/test2.jpg",
-        "/img/test1a.jpg",
-        "/img/test1a.jpg",
-        "/img/test1a.jpg",
-        "/img/test1a.jpg"
-      ]
-    },
-    "third-commercial-project": {
-      "name": "Commercial Project 3",
-      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n\nDonec tristique sapien quis bibendum imperdiet. Nunc ornare euismod elit, vel molestie magna tempus ut. Fusce convallis turpis magna. Quisque aliquet fermentum est, sit amet accumsan diam pharetra eu. Cras a mi a magna dapibus consequat. Nullam fringilla ut ante id iaculis. Vestibulum quis tortor lorem. Aliquam et varius enim, ut egestas arcu. Phasellus sollicitudin nisl leo, sit amet facilisis ex blandit sit amet. Aliquam venenatis est tempor dolor placerat iaculis. Phasellus ornare orci ac lacus vehicula, eu viverra nunc egestas. Curabitur lacinia sem mi, ac ultrices dui egestas eget. Pellentesque sollicitudin ante et rutrum commodo. Duis id mauris ut augue condimentum aliquet sit amet vitae dolor. Mauris aliquet commodo laoreet. Vestibulum ultrices ante eget dolor dictum, vitae gravida nunc cursus.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tristique sapien quis bibendum imperdiet. Nunc ornare euismod elit, vel molestie magna tempus ut. Fusce convallis turpis magna. Quisque aliquet fermentum est, sit amet accumsan diam pharetra eu. Cras a mi a magna dapibus consequat. Nullam fringilla ut ante id iaculis. Vestibulum quis tortor lorem. Aliquam et varius enim, ut egestas arcu. Phasellus sollicitudin nisl leo, sit amet facilisis ex blandit sit amet. Aliquam venenatis est tempor dolor placerat iaculis. Phasellus ornare orci ac lacus vehicula, eu viverra nunc egestas. Curabitur lacinia sem mi, ac ultrices dui egestas eget. Pellentesque sollicitudin ante et rutrum commodo. Duis id mauris ut augue condimentum aliquet sit amet vitae dolor. Mauris aliquet commodo laoreet. Vestibulum ultrices ante eget dolor dictum, vitae gravida nunc cursus.",
-      "images": ["/img/test1a.jpg", "/img/test1a.jpg"]
-    },
-    "fourth-commercial-project": {
-      "name": "Commercial Project 4",
-      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n\nDonec tristique sapien quis bibendum imperdiet. Nunc ornare euismod elit, vel molestie magna tempus ut. Fusce convallis turpis magna. Quisque aliquet fermentum est, sit amet accumsan diam pharetra eu. Cras a mi a magna dapibus consequat. Nullam fringilla ut ante id iaculis. Vestibulum quis tortor lorem. Aliquam et varius enim, ut egestas arcu. Phasellus sollicitudin nisl leo, sit amet facilisis ex blandit sit amet. Aliquam venenatis est tempor dolor placerat iaculis. Phasellus ornare orci ac lacus vehicula, eu viverra nunc egestas. Curabitur lacinia sem mi, ac ultrices dui egestas eget. Pellentesque sollicitudin ante et rutrum commodo. Duis id mauris ut augue condimentum aliquet sit amet vitae dolor. Mauris aliquet commodo laoreet. Vestibulum ultrices ante eget dolor dictum, vitae gravida nunc cursus.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tristique sapien quis bibendum imperdiet. Nunc ornare euismod elit, vel molestie magna tempus ut. Fusce convallis turpis magna. Quisque aliquet fermentum est, sit amet accumsan diam pharetra eu. Cras a mi a magna dapibus consequat. Nullam fringilla ut ante id iaculis. Vestibulum quis tortor lorem. Aliquam et varius enim, ut egestas arcu. Phasellus sollicitudin nisl leo, sit amet facilisis ex blandit sit amet. Aliquam venenatis est tempor dolor placerat iaculis. Phasellus ornare orci ac lacus vehicula, eu viverra nunc egestas. Curabitur lacinia sem mi, ac ultrices dui egestas eget. Pellentesque sollicitudin ante et rutrum commodo. Duis id mauris ut augue condimentum aliquet sit amet vitae dolor. Mauris aliquet commodo laoreet. Vestibulum ultrices ante eget dolor dictum, vitae gravida nunc cursus.",
-      "images": ["/img/test1a.jpg", "/img/test1a.jpg"]
-    }
-  }  
+  "first-commercial-project": {
+    "name": "Commercial Project 1",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n\nDonec tristique sapien quis bibendum imperdiet. Nunc ornare euismod elit, vel molestie magna tempus ut. Fusce convallis turpis magna. Quisque aliquet fermentum est, sit amet accumsan diam pharetra eu. Cras a mi a magna dapibus consequat. Nullam fringilla ut ante id iaculis. Vestibulum quis tortor lorem. Aliquam et varius enim, ut egestas arcu. Phasellus sollicitudin nisl leo, sit amet facilisis ex blandit sit amet. Aliquam venenatis est tempor dolor placerat iaculis. Phasellus ornare orci ac lacus vehicula, eu viverra nunc egestas. Curabitur lacinia sem mi, ac ultrices dui egestas eget. Pellentesque sollicitudin ante et rutrum commodo. Duis id mauris ut augue condimentum aliquet sit amet vitae dolor. Mauris aliquet commodo laoreet. Vestibulum ultrices ante eget dolor dictum, vitae gravida nunc cursus.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tristique sapien quis bibendum imperdiet. Nunc ornare euismod elit, vel molestie magna tempus ut. Fusce convallis turpis magna. Quisque aliquet fermentum est, sit amet accumsan diam pharetra eu. Cras a mi a magna dapibus consequat. Nullam fringilla ut ante id iaculis. Vestibulum quis tortor lorem. Aliquam et varius enim, ut egestas arcu. Phasellus sollicitudin nisl leo, sit amet facilisis ex blandit sit amet. Aliquam venenatis est tempor dolor placerat iaculis. Phasellus ornare orci ac lacus vehicula, eu viverra nunc egestas. Curabitur lacinia sem mi, ac ultrices dui egestas eget. Pellentesque sollicitudin ante et rutrum commodo. Duis id mauris ut augue condimentum aliquet sit amet vitae dolor. Mauris aliquet commodo laoreet. Vestibulum ultrices ante eget dolor dictum, vitae gravida nunc cursus.",
+    "images": ["/img/test2.jpg", "/img/test1a.jpg"]
+  },
+  "second-commercial-project": {
+    "name": "Commercial Project 2",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n\nDonec tristique sapien quis bibendum imperdiet. Nunc ornare euismod elit, vel molestie magna tempus ut. Fusce convallis turpis magna. Quisque aliquet fermentum est, sit amet accumsan diam pharetra eu. Cras a mi a magna dapibus consequat. Nullam fringilla ut ante id iaculis. Vestibulum quis tortor lorem. Aliquam et varius enim, ut egestas arcu. Phasellus sollicitudin nisl leo, sit amet facilisis ex blandit sit amet. Aliquam venenatis est tempor dolor placerat iaculis. Phasellus ornare orci ac lacus vehicula, eu viverra nunc egestas. Curabitur lacinia sem mi, ac ultrices dui egestas eget. Pellentesque sollicitudin ante et rutrum commodo. Duis id mauris ut augue condimentum aliquet sit amet vitae dolor. Mauris aliquet commodo laoreet. Vestibulum ultrices ante eget dolor dictum, vitae gravida nunc cursus.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tristique sapien quis bibendum imperdiet. Nunc ornare euismod elit, vel molestie magna tempus ut. Fusce convallis turpis magna. Quisque aliquet fermentum est, sit amet accumsan diam pharetra eu. Cras a mi a magna dapibus consequat. Nullam fringilla ut ante id iaculis. Vestibulum quis tortor lorem. Aliquam et varius enim, ut egestas arcu. Phasellus sollicitudin nisl leo, sit amet facilisis ex blandit sit amet. Aliquam venenatis est tempor dolor placerat iaculis. Phasellus ornare orci ac lacus vehicula, eu viverra nunc egestas. Curabitur lacinia sem mi, ac ultrices dui egestas eget. Pellentesque sollicitudin ante et rutrum commodo. Duis id mauris ut augue condimentum aliquet sit amet vitae dolor. Mauris aliquet commodo laoreet. Vestibulum ultrices ante eget dolor dictum, vitae gravida nunc cursus.",
+    "images": [
+      "/img/test1a.jpg",
+      "/img/test2.jpg",
+      "/img/test1a.jpg",
+      "/img/test1a.jpg",
+      "/img/test2.jpg",
+      "/img/test2.jpg",
+      "/img/test1a.jpg",
+      "/img/test1a.jpg",
+      "/img/test2.jpg",
+      "/img/test2.jpg",
+      "/img/test1a.jpg",
+      "/img/test1a.jpg",
+      "/img/test1a.jpg",
+      "/img/test1a.jpg"
+    ]
+  },
+  "third-commercial-project": {
+    "name": "Commercial Project 3",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n\nDonec tristique sapien quis bibendum imperdiet. Nunc ornare euismod elit, vel molestie magna tempus ut. Fusce convallis turpis magna. Quisque aliquet fermentum est, sit amet accumsan diam pharetra eu. Cras a mi a magna dapibus consequat. Nullam fringilla ut ante id iaculis. Vestibulum quis tortor lorem. Aliquam et varius enim, ut egestas arcu. Phasellus sollicitudin nisl leo, sit amet facilisis ex blandit sit amet. Aliquam venenatis est tempor dolor placerat iaculis. Phasellus ornare orci ac lacus vehicula, eu viverra nunc egestas. Curabitur lacinia sem mi, ac ultrices dui egestas eget. Pellentesque sollicitudin ante et rutrum commodo. Duis id mauris ut augue condimentum aliquet sit amet vitae dolor. Mauris aliquet commodo laoreet. Vestibulum ultrices ante eget dolor dictum, vitae gravida nunc cursus.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tristique sapien quis bibendum imperdiet. Nunc ornare euismod elit, vel molestie magna tempus ut. Fusce convallis turpis magna. Quisque aliquet fermentum est, sit amet accumsan diam pharetra eu. Cras a mi a magna dapibus consequat. Nullam fringilla ut ante id iaculis. Vestibulum quis tortor lorem. Aliquam et varius enim, ut egestas arcu. Phasellus sollicitudin nisl leo, sit amet facilisis ex blandit sit amet. Aliquam venenatis est tempor dolor placerat iaculis. Phasellus ornare orci ac lacus vehicula, eu viverra nunc egestas. Curabitur lacinia sem mi, ac ultrices dui egestas eget. Pellentesque sollicitudin ante et rutrum commodo. Duis id mauris ut augue condimentum aliquet sit amet vitae dolor. Mauris aliquet commodo laoreet. Vestibulum ultrices ante eget dolor dictum, vitae gravida nunc cursus.",
+    "images": ["/img/test1a.jpg", "/img/test1a.jpg"]
+  },
+  "fourth-commercial-project": {
+    "name": "Commercial Project 4",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n\nDonec tristique sapien quis bibendum imperdiet. Nunc ornare euismod elit, vel molestie magna tempus ut. Fusce convallis turpis magna. Quisque aliquet fermentum est, sit amet accumsan diam pharetra eu. Cras a mi a magna dapibus consequat. Nullam fringilla ut ante id iaculis. Vestibulum quis tortor lorem. Aliquam et varius enim, ut egestas arcu. Phasellus sollicitudin nisl leo, sit amet facilisis ex blandit sit amet. Aliquam venenatis est tempor dolor placerat iaculis. Phasellus ornare orci ac lacus vehicula, eu viverra nunc egestas. Curabitur lacinia sem mi, ac ultrices dui egestas eget. Pellentesque sollicitudin ante et rutrum commodo. Duis id mauris ut augue condimentum aliquet sit amet vitae dolor. Mauris aliquet commodo laoreet. Vestibulum ultrices ante eget dolor dictum, vitae gravida nunc cursus.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tristique sapien quis bibendum imperdiet. Nunc ornare euismod elit, vel molestie magna tempus ut. Fusce convallis turpis magna. Quisque aliquet fermentum est, sit amet accumsan diam pharetra eu. Cras a mi a magna dapibus consequat. Nullam fringilla ut ante id iaculis. Vestibulum quis tortor lorem. Aliquam et varius enim, ut egestas arcu. Phasellus sollicitudin nisl leo, sit amet facilisis ex blandit sit amet. Aliquam venenatis est tempor dolor placerat iaculis. Phasellus ornare orci ac lacus vehicula, eu viverra nunc egestas. Curabitur lacinia sem mi, ac ultrices dui egestas eget. Pellentesque sollicitudin ante et rutrum commodo. Duis id mauris ut augue condimentum aliquet sit amet vitae dolor. Mauris aliquet commodo laoreet. Vestibulum ultrices ante eget dolor dictum, vitae gravida nunc cursus.",
+    "images": ["/img/test1a.jpg", "/img/test1a.jpg"]
+  }
+}
 
 const PASSWORD = "password";
 
