@@ -1,50 +1,41 @@
 import React from 'react'
-// import PropTypes from 'prop-types'
-// import { Link, graphql } from 'gatsby'
-import Layout from '../../components/Layout'
-// import { ContentFrame } from "../../components/ContentFrame";
-// import HomeTile from "../../components/HomeTile";
+import PropTypes from 'prop-types'
+import { navigate } from "gatsby"
 
 export default class IndexPage extends React.Component {
   render() {
-    // const { data } = this.props
-    // const { edges: projects } = data.allMarkdownRemark
+    const { data } = this.props
+    const { edges: projects } = data.allMarkdownRemark
 
-    // console.log(projects)
+    console.log(projects);
+
+    if (projects[0]) {
+      navigate(projects[0].node.fields.slug)
+    }
 
     return (
-      <Layout>
-        ABC
-                {/* <ContentFrame>
-                    {projects.map(({ node: project }) => (
-                        <Link key={project.fields.slug} to={project.fields.slug}>
-                            <HomeTile
-                                title={project.frontmatter.title}
-                                src={project.frontmatter.image}
-                                hoverSrc={"def.jpg"}
-                            />
-                        </Link>
-                    ))}
-                </ContentFrame> */}
-      </Layout>
+      <div />
     )
   }
 }
 
-// IndexPage.propTypes = {
-//     data: PropTypes.shape({
-//         allMarkdownRemark: PropTypes.shape({
-//             edges: PropTypes.array,
-//         }),
-//     }),
-// }
+IndexPage.propTypes = {
+  data: PropTypes.shape({
+    allMarkdownRemark: PropTypes.shape({
+      edges: PropTypes.array,
+    }),
+  }),
+}
 
-/*
 export const pageQuery = graphql`
-  query IndexQuery {
+  query CommercialQuery {
     allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date] },
-      filter: { frontmatter: { templateKey: { eq: "project-page" } }}
+      limit: 1,
+      filter: { frontmatter: {
+        templateKey: { eq: "project-page" }
+        type: { eq: "commercial" }
+      }}
     ) {
       edges {
         node {
@@ -62,4 +53,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`*/
+`
