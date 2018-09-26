@@ -7,9 +7,7 @@ export default class IndexPage extends React.Component {
     const { data } = this.props
     const { edges: projects } = data.allMarkdownRemark
 
-    console.log(projects);
-
-    if (projects[0]) {
+    if (projects[0] && typeof window !== "undefined") {
       navigate(projects[0].node.fields.slug)
     }
 
