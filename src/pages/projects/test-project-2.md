@@ -1,8 +1,9 @@
 ---
 templateKey: project-page
-title: Test Project 2
+title: Makeness - Loud Patterns
 type: creative
 image: /img/chemex.jpg
+imageHover: /img/coffee-gear.png
 slides:
   - file: /img/flavor_wheel.jpg
     type: image
