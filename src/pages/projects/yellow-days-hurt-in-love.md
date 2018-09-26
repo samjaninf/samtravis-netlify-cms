@@ -7,6 +7,7 @@ image: /img/yd-00.jpg
 imageHover: /img/yd-00.jpg
 slides:
   - file: /img/yd-00.jpg
+    title: YD
     type: video
     url: >-
       https://player.vimeo.com/external/228706416.hd.mp4?s=f18819df0ad6e20c84a074a08a1ae46f7321b397&profile_id=175
