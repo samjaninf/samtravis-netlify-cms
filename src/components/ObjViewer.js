@@ -17,8 +17,9 @@ class VRScene extends React.Component {
         const { src } = this.props;
         return (
             <Scene embedded vr-mode-ui="enabled: false" deallocate>
+                <Entity camera></Entity>
                 <Entity light={{ type: 'point' }} />
-                <Entity obj-model={{ obj: src }} material={{ color: 'blue' }} position={{ x: 0, y: 1.5, z: -5 }} />
+                <Entity look-controls obj-model={{ obj: src }} material={{ color: 'blue' }} position={{ x: 0, y: 0, z: -3 }} />
             </Scene>
         );
     }
