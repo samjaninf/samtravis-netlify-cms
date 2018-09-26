@@ -1,15 +1,19 @@
 ---
 templateKey: project-page
-title: Test Project 1
+title: Obongjayar
 type: creative
-image: /img/chemex.jpg
-imageHover: /img/products-grid3.jpg
+image: /img/ob-00.jpg
+imageHover: /img/ob-00.jpg
 slides:
-  - file: /img/flavor_wheel.jpg
+  - file: /img/ob-01.jpg
     type: image
-  - file: /img/products-grid2.jpg
+  - file: /img/ob-02.jpg
     type: image
   - file: /img/regen-pod-mk1.obj
     type: 3dobject
+  - file: /img/ob-03.jpg
+    type: image
+  - file: /img/ob-04.jpg
+    type: image
 ---
 This is the page content
