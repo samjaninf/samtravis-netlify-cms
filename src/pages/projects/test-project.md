@@ -3,7 +3,7 @@ templateKey: project-page
 title: Obongjayar
 date: 2018-09-28T12:35:23.915Z
 type: creative
-image: /img/ob-00.jpg
+image: /img/uo.jpg
 imageHover: /img/ob-00.jpg
 slides:
   - file: /img/ob-01.jpg
