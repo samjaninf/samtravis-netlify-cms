@@ -3,7 +3,7 @@ templateKey: project-page
 title: Makeness - Loud Patterns
 date: 2018-09-28T10:08:35.581Z
 type: creative
-image: /img/mnlp-00.jpg
+image: /img/mnlp.jpg
 imageHover: /img/mnlp-00.jpg
 slides:
   - file: /img/mnlp-01.jpg
