@@ -1,6 +1,7 @@
 ---
 templateKey: project-page
 title: Makeness - Loud Patterns
+date: 2018-09-28T10:08:35.581Z
 type: creative
 image: /img/mnlp-00.jpg
 imageHover: /img/mnlp-00.jpg
@@ -16,4 +17,4 @@ slides:
   - file: /img/mnlp-05.jpg
     type: image
 ---
-Make your work consistent but not fucking predictable. Practice won’t get you anywhere if you mindlessly fucking practice the same thing. Change only occurs when you work deliberately with purpose toward a goal. You are not your fucking work. Form follows fucking function. Never, never assume that what you have achieved is fucking good enough. This design is fucking brilliant. When you design, you have to draw on your own fucking life experiences. If it’s not something you would want to read/look at/use then why fucking bother? Creativity is a fucking work-ethic. You won’t get good at anything by doing it a lot fucking aimlessly. Dedicate yourself to lifelong fucking learning. Paul Rand once said, “The public is more familiar with bad fucking design than good design. It is, in effect, conditioned to prefer bad design, because that is what it lives with. The new becomes threatening, the old reassuring.” A good fucking composition is the result of a hierarchy consisting of clearly contrasting elements set with distinct alignments containing irregular intervals of negative space. Someday is not a fucking day of the week. Respect your fucking craft.
+Loud Patterns is Makeness' debut album and was released on Secretly Canadian. We wanted the artwork to reflect the intensity and variety of colour and texture present in the record. We needed something that would straddle analogue and digital in the same way that the sonic world of Loud Patterns did. More personally we wanted to reference something folkloric and natural, something with some mystery that wasn't wholly abstract. I went out for a walk one day while we were working on the artwork and saw a decaying tree covered in bracket fungus - and through a process of digitally scanning and using the resulting model as a base for experiments in colour and material - we developed the sleeve artwork from there.
