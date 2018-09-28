@@ -10,7 +10,7 @@ slides:
     type: image
   - file: /img/ob-02.jpg
     type: image
-  - file: /img/universal-02.obj
+  - file: /img/regen-pod-mk1.obj
     type: 3dobject
   - file: /img/ob-03.jpg
     type: image
