@@ -3,7 +3,7 @@ templateKey: project-page
 title: Tongue
 date: 2018-09-26T20:10:21.693Z
 type: creative
-image: /img/tongue-00.jpg
+image: /img/t.jpg
 imageHover: /img/tongue-00.jpg
 slides:
   - file: /img/tongue-01.jpg
