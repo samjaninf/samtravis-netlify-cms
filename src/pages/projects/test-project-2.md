@@ -17,4 +17,10 @@ slides:
   - file: /img/mnlp-05.jpg
     type: image
 ---
-Loud Patterns is Makeness' debut album and was released on Secretly Canadian. We wanted the artwork to reflect the intensity and variety of colour and texture present in the record. We needed something that would straddle analogue and digital in the same way that the sonic world of Loud Patterns did. More personally we wanted to reference something folkloric and natural, something with some mystery that wasn't wholly abstract. I went out for a walk one day while we were working on the artwork and saw a decaying tree covered in bracket fungus - and through a process of digitally scanning and using the resulting model as a base for experiments in colour and material - we developed the sleeve artwork from there.
+Loud Patterns is Makeness' debut album. We wanted the artwork to reflect the intensity and variety of colour and texture present in the record. We needed something that would straddle analogue and digital in the same way that the sonic world of Loud Patterns did. More personally we wanted to reference something folkloric and natural, something with some mystery that wasn't wholly abstract. I went out for a walk one day while we were working on the artwork and saw a decaying tree covered in bracket fungus. Through a process of digitally scanning and using the resulting model as a base for experiments in colour and material the artwork was developed.
+
+Loud Patterns was released on Secretly Canadian. Thanks go to Miles Johnson, their creative director, who helped develop the design and artwork.
+
+[makeness.world](http://makeness.world/)
+
+[secretly canadian](https://secretlycanadian.com/record/loud-patterns/)
