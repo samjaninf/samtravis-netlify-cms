@@ -3,8 +3,8 @@ templateKey: project-page
 title: Makeness - 14 Drops
 date: 2018-09-28T14:42:30.973Z
 type: creative
-image: /img/mn14d-00.jpg
-imageHover: /img/mnlp-00-hover.jpg
+image: /img/mnlp-00-hover.jpg
+imageHover: /img/mn14d-00.jpg
 slides:
   - type: video
     url: >-
