@@ -16,6 +16,8 @@ slides:
     type: image
   - file: /img/mnlp-05.jpg
     type: image
+  - file: /img/makeness-live-visuals.jpg
+    type: image
 ---
 Loud Patterns is Makeness' debut album. We wanted the artwork to reflect the intensity and variety of colour and texture present in the record. We needed something that would straddle analogue and digital in the same way that the sonic world of Loud Patterns did. More personally we wanted to reference something folkloric and natural, something with some mystery that wasn't wholly abstract. I went out for a walk one day while we were working on the artwork and saw a decaying tree covered in bracket fungus. Through a process of digitally scanning and using the resulting model as a base for experiments in colour and material the artwork was developed.
 
