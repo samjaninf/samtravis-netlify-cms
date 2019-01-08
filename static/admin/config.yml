@@ -9,6 +9,17 @@ publish_mode: editorial_workflow
 
 collections:
 
+  - label: "Content"
+    name: "content"
+    files:
+      - label: "Navigation"
+        name: "navigation"
+        file: "src/content/navigation.yml"
+        fields:
+          - {label: "About", name: "about", widget: "markdown"}
+          - {label: "Contact", name: "contact", widget: "markdown"}
+          - {label: "Commercial", name: "commercial", widget: "markdown"}
+
   - name: "project"
     label: "Project"
     folder: "src/pages/projects"
