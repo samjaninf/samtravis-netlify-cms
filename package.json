@@ -8,7 +8,7 @@
     "aframe-react": "^4.4.0",
     "bulma": "^0.7.0",
     "classnames": "^2.2.6",
-    "gatsby": "^2.0.0",
+    "gatsby": "^2.0.85",
     "gatsby-plugin-netlify": "^2.0.0",
     "gatsby-plugin-netlify-cms": "^3.0.0",
     "gatsby-plugin-react-helmet": "^3.0.0",
@@ -20,6 +20,7 @@
     "gatsby-transformer-sharp": "^2.1.1",
     "lodash": "^4.17.5",
     "lodash-webpack-plugin": "^0.11.4",
+    "markdown-it": "^8.4.2",
     "netlify-cms": "^2.1.1",
     "node-sass": "^4.9.2",
     "parcel-bundler": "^1.9.4",
@@ -30,9 +31,7 @@
     "react-motion": "^0.5.2",
     "uuid": "^3.2.1"
   },
-  "keywords": [
-    "gatsby"
-  ],
+  "keywords": ["gatsby"],
   "license": "MIT",
   "main": "n/a",
   "scripts": {
@@ -41,7 +40,8 @@
     "build": "npm run clean && gatsby build",
     "develop": "npm run clean && gatsby develop",
     "serve": "gatsby serve",
-    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"{gatsby-*.js,src/**/*.js}\"",
+    "format":
+      "prettier --trailing-comma es5 --no-semi --single-quote --write \"{gatsby-*.js,src/**/*.js}\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {

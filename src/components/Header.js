@@ -1,13 +1,23 @@
 import React, { Component } from "react";
-import { navigate, Link } from "gatsby"
+import { navigate, Link } from "gatsby";
 import Grid, { GridColumn } from "../components/Grid";
 import cx from "classnames";
+import markdownIt from "markdown-it";
+import data from "../data/navigation.json";
 import "./Header.css";
 
-const localStorage = typeof window !== 'undefined' ? window.localStorage : {
-  getItem: () => { },
-  setItem: () => { }
-}
+const md = markdownIt({
+  html: true,
+  linkify: true
+});
+
+const localStorage =
+  typeof window !== "undefined"
+    ? window.localStorage
+    : {
+        getItem: () => {},
+        setItem: () => {}
+      };
 
 const PASSWORD = "password";
 
@@ -95,31 +105,27 @@ class Header extends Component {
           <Grid>
             <GridColumn>
               <h2>About</h2>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-                tristique sapien quis bibendum imperdiet. Nunc ornare euismod
-                elit, vel molestie magna tempus ut. Fusce convallis turpis
-                magna. Quisque aliquet fermentum est, sit amet accumsan diam
-                pharetra eu. Cras a mi a magna dapibus consequat.
-              </p>
+              <div
+                dangerouslySetInnerHTML={{ __html: md.render(data.about) }}
+              />
             </GridColumn>
             <GridColumn>
               <h2>Contact</h2>
-              <p>
-                <a href="mailto:samueljtravis@gmail.com">
-                  samueljtravis@gmail.com
-                </a>
-              </p>
+              <div
+                dangerouslySetInnerHTML={{ __html: md.render(data.contact) }}
+              />
             </GridColumn>
             <GridColumn>
               <h2>Commercial Work</h2>
-              {!passwordCorrect &&
+              {!passwordCorrect && (
                 <input
                   placeholder="What's the password?"
                   onKeyPress={this.onPasswordKeyPress}
-                />}
-              <p>Lorem ipsum dolor sit amet</p>
-              <p>Fusce convallis turpis magna</p>
+                />
+              )}
+              <div
+                dangerouslySetInnerHTML={{ __html: md.render(data.commercial) }}
+              />
             </GridColumn>
           </Grid>
         </div>

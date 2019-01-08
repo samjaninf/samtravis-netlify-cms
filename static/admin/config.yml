@@ -14,7 +14,7 @@ collections:
     files:
       - label: "Navigation"
         name: "navigation"
-        file: "src/content/navigation.yml"
+        file: "src/data/navigation.json"
         fields:
           - {label: "About", name: "about", widget: "markdown"}
           - {label: "Contact", name: "contact", widget: "markdown"}
