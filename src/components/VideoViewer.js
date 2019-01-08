@@ -7,12 +7,14 @@ export default class VideoViewer extends Component {
         const { src, poster, visible } = this.props;
         return (
             <video
-                className={cx("VideoViewer", { "VideoViewer--Hidden": !visible })}
+                className={cx("VideoViewer", {
+                    "VideoViewer--Hidden": !visible
+                })}
                 poster={poster}
-                muted={!visible}
-                controls
+                muted
+                autoPlay
             >
-                <source src={src} type="video/mp4"></source>
+                <source src={src} type="video/mp4" />
             </video>
         );
     }
