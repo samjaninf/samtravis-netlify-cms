@@ -1,141 +1,142 @@
 .Header {
-    background-color: transparent;
-    transition: background-color 0.3s ease-in-out;
-    position: relative;
-    user-select: none;
-  }
-  
-  .Header__Navigation {
-    display: flex;
-    height: 60px;
-    line-height: 60px;
-  }
-  
-  .Header__Navigation a {
-    width: 150px;
-    text-align: center;
-  }
-  
-  .Header__Navigation a:first-child {
-    width: 150px;
-    text-align: left;
-  }
-  
-  .Header__Navigation div:last-child {
-    width: 150px;
-    text-align: right;
-  }
-  
-  .Header .Header__Navigation__Item--Active {
-    text-decoration: underline;
-  }
-  
-  .Header__Navigation--Commercial {
-    line-height: 30px;
-    height: 30px;
-  }
-  
-  .Header__Navigation--Commercial a {
-    flex: 2;
-    text-align: center;
-  }
-  
-  .Header__Navigation--Commercial a:first-child {
-    text-align: left;
-    flex: 1;
-  }
-  
-  .Header__Navigation--Commercial a:last-child {
-    text-align: right;
-    flex: 1;
-  }
-  
-  .Header a {
-    text-decoration: none;
-    color: #000;
-  }
-  
-  .Header a:hover {
-    text-decoration: underline;
-  }
-  
-  .Header__Spacer {
-    flex: 1;
-  }
-  
-  .Header__MenuButton {
-    cursor: pointer;
-    position: relative;
-    right: 0px;
-    z-index: 100;
-    transition: 0.3s ease-in-out right;
-  }
-  
-  .Header__MenuButton:hover {
-    text-decoration: underline;
-  }
-  
-  .Header__MenuButton--Open {
-    right: 70px;
-    text-decoration: underline;
-  }
-  
-  .Header__CloseButton {
-    position: absolute;
-    right: 0px;
-    top: 18px;
-    width: 25px;
-    height: 25px;
-    opacity: 0;
-    cursor: pointer;
-    transition: 0.3s ease-in-out opacity;
-  }
-  
-  .Header__CloseButton--Open {
-    opacity: 1;
-  }
-  
-  .Header__Menu {
-    position: absolute;
-    top: 60px;
-    left: 0px;
-    right: 0px;
-    height: 0px;
-    overflow: hidden;
-    background-color: #ffffff;
-    z-index: 1000;
-    transition: 0.3s ease-in-out height;
-  }
-  
-  .Header__Menu--Open {
-    height: 245px;
-    border-bottom: 1px solid #000;
-  }
-  
-  .Header h2 {
-    text-align: left;
-  }
-  
-  .Header input {
-    padding: 10px;
-    font-size: 12px;
-    width: 100%;
-    box-sizing: border-box;
-    border: 1px solid #000;
-    background-color: #ffffff;
-    outline: none;
-  }
-  
-  .CommercialPage .Header input {
-    background-color: #fff;
-  }
-  
-  .Header__Menu .Grid__Column {
-    padding: 20px 0px;
-    border: 0px;
-  }
-  
-  .CommercialPage .Header__Menu {
-    background-color: #ffffff;
-  }
-  
+  background-color: transparent;
+  transition: background-color 0.3s ease-in-out;
+  position: relative;
+  user-select: none;
+}
+
+.Header__Navigation {
+  display: flex;
+  height: 60px;
+  line-height: 60px;
+}
+
+.Header__Navigation a {
+  width: 150px;
+  text-align: center;
+}
+
+.Header__Navigation a:first-child {
+  width: 150px;
+  text-align: left;
+}
+
+.Header__Navigation div:last-child {
+  width: 150px;
+  text-align: right;
+}
+
+.Header .Header__Navigation__Item--Active {
+  text-decoration: underline;
+}
+
+.Header__Navigation--Commercial {
+  line-height: 30px;
+  height: 30px;
+  margin-top: -10px;
+  padding-bottom: 10px;
+}
+
+.Header__Navigation--Commercial a {
+  flex: 2;
+  text-align: center;
+}
+
+.Header__Navigation--Commercial a:first-child {
+  text-align: left;
+  flex: 1;
+}
+
+.Header__Navigation--Commercial a:last-child {
+  text-align: right;
+  flex: 1;
+}
+
+.Header a {
+  text-decoration: none;
+  color: #000;
+}
+
+.Header a:hover {
+  text-decoration: underline;
+}
+
+.Header__Spacer {
+  flex: 1;
+}
+
+.Header__MenuButton {
+  cursor: pointer;
+  position: relative;
+  right: 0px;
+  z-index: 100;
+  transition: 0.3s ease-in-out right;
+}
+
+.Header__MenuButton:hover {
+  text-decoration: underline;
+}
+
+.Header__MenuButton--Open {
+  right: 70px;
+  text-decoration: underline;
+}
+
+.Header__CloseButton {
+  position: absolute;
+  right: 0px;
+  top: 18px;
+  width: 25px;
+  height: 25px;
+  opacity: 0;
+  cursor: pointer;
+  transition: 0.3s ease-in-out opacity;
+}
+
+.Header__CloseButton--Open {
+  opacity: 1;
+}
+
+.Header__Menu {
+  position: absolute;
+  top: 60px;
+  left: 0px;
+  right: 0px;
+  height: 0px;
+  overflow: hidden;
+  background-color: #ffffff;
+  z-index: 1000;
+  transition: 0.3s ease-in-out height;
+}
+
+.Header__Menu--Open {
+  height: 245px;
+  border-bottom: 1px solid #000;
+}
+
+.Header h2 {
+  text-align: left;
+}
+
+.Header input {
+  padding: 10px;
+  font-size: 12px;
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #000;
+  background-color: #ffffff;
+  outline: none;
+}
+
+.CommercialPage .Header input {
+  background-color: #fff;
+}
+
+.Header__Menu .Grid__Column {
+  padding: 20px 0px;
+  border: 0px;
+}
+
+.CommercialPage .Header__Menu {
+  background-color: #ffffff;
+}
