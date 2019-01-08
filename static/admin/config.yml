@@ -32,5 +32,5 @@ collections:
       - {label: "Type", name: "type", widget: "select", options: ["creative", "commercial"]}
       - {label: Image, name: image, widget: image}
       - {label: HoverImage, name: imageHover, widget: image}
-      - {label: Slides, name: slides, widget: list, fields: [{label: "Type", name: type, widget: select, options: ["image", "3dobject","video"]}, {label: "Title", name: title, widget: string}, {label: "File", name: file, widget: file},{label: "URL", name: url, widget: string}]}
+      - {label: Slides, name: slides, widget: list, fields: [{label: "Type", name: type, widget: select, options: ["image", "3dobject","video"]}, {label: "Title", name: title, widget: string}, {label: "File", name: file, widget: file},{label: "Material (only for OBJ)", name: material, widget: file},{label: "URL", name: url, widget: string}]}
       - {label: "Body", name: "body", widget: "markdown"}

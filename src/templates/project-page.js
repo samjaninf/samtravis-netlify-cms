@@ -39,7 +39,7 @@ const MediaSlide = (slide, index, currentSlide) => {
       visible={index === currentSlide}
     />
   ) : slide.type === "3dobject" ? (
-    <ObjViewer key={index} src={slide.file} />
+    <ObjViewer key={index} src={slide.file} material={slide.material} />
   ) : null;
 };
 
@@ -187,6 +187,7 @@ export const pageQuery = graphql`
           type
           file
           url
+          material
         }
       }
     }
