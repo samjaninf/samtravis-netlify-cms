@@ -10,5 +10,7 @@ slides:
     type: image
   - file: /img/tongue-02.jpg
     type: image
+  - type: video
+    url: 'https://vimeo.com/306766511/08ed77ec8d'
 ---
 x
