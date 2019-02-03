@@ -1,10 +1,45 @@
 .VideoViewer {
-    width: 100%;
-    height: 100%;
-    opacity: 1;
-    transition: opacity ease-in-out 0.3s;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  transition: opacity ease-in-out 0.3s;
 }
 
 .VideoViewer--Hidden {
-    opacity: 0;;
+  opacity: 0;
+}
+
+.VideoViewer video {
+  width: 100%;
+  height: 100%;
+}
+
+.VideoViewer__Buttons {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.VideoViewer__Button {
+  padding: 40px;
+}
+
+.VideoViewer__Buttons svg {
+  width: 30px;
+}
+
+.VideoViewer--Playing .VideoViewer__Button {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.VideoViewer--Playing .VideoViewer__Button:hover {
+  opacity: 1;
 }
