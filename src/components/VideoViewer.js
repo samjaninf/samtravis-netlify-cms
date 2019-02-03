@@ -30,7 +30,7 @@ export default class VideoViewer extends Component {
           "VideoViewer--Playing": !paused
         })}
       >
-        <video poster={poster} ref={this.videoRef} muted={!visible}>
+        <video poster={poster} ref={this.videoRef} muted={!visible} loop>
           <source src={src} type="video/mp4" />
         </video>
 
