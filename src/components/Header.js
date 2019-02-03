@@ -112,7 +112,9 @@ class Header extends Component {
             <GridColumn>
               <h2>Contact</h2>
               <div
-                dangerouslySetInnerHTML={{ __html: md.render(data.contact) }}
+                dangerouslySetInnerHTML={{
+                  __html: md.render(data.contact).replace(/>mailto:/, ">")
+                }}
               />
             </GridColumn>
             <GridColumn>
