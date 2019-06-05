@@ -27,3 +27,18 @@
 .Grid__Column:last-child {
   border-right: 0;
 }
+
+.Grid__Column--OverflowVisible {
+  overflow: visible;
+}
+
+@media only screen and (max-width: 600px) {
+  .Grid {
+    display: block;
+    overflow: auto;
+  }
+
+  .Grid__Column {
+    width: 100%;
+  }
+}

@@ -51,6 +51,27 @@ class ProjectPage extends React.Component {
     };
   }
 
+  componentDidMount() {
+    window.addEventListener("keydown", this.onKeyPress);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("keydown", this.onKeyPress);
+  }
+
+  onKeyPress = e => {
+    const { data } = this.props;
+    const { markdownRemark: post } = data;
+    const { html, frontmatter } = post;
+    const { slides } = frontmatter;
+    const numFrames = slides.length + (html.length > 0 ? 1 : 0);
+    if (e.key === "ArrowLeft") {
+      this.setFrame((numFrames + this.state.frame - 1) % numFrames);
+    } else if (e.key === "ArrowRight") {
+      this.setFrame((numFrames + this.state.frame + 1) % numFrames);
+    }
+  };
+
   setFrame = frame => {
     this.setState({
       frame
@@ -76,7 +97,7 @@ class ProjectPage extends React.Component {
               <h2>{title}</h2>
               <HTMLContent content={html} />
             </GridColumn>
-            <GridColumn width={2}>
+            <GridColumn width={2} overflowVisible>
               <Carousel frame={frame}>
                 {slides.map((slide, index) =>
                   MediaSlide(slide, index, this.state.frame)

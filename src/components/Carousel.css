@@ -2,6 +2,11 @@
   height: 100%;
   overflow: hidden;
   position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 
 .Carousel__Slider {
@@ -45,7 +50,7 @@
 .CarouselPrev {
   position: absolute;
   top: 50%;
-  left: 0;
+  left: -46px;
   width: 30px;
   height: 200px;
   transform: translateY(-50%);
@@ -58,7 +63,7 @@
 .CarouselNext {
   position: absolute;
   top: 50%;
-  right: 0;
+  right: -46px;
   width: 30px;
   height: 200px;
   transform: translateY(-50%);

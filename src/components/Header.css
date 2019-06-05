@@ -7,8 +7,8 @@
 
 .Header__Navigation {
   display: flex;
-  height: 60px;
-  line-height: 60px;
+  height: 62px;
+  line-height: 62px;
 }
 
 .Header__Navigation a {
@@ -40,6 +40,7 @@
 .Header__Navigation--Commercial a {
   flex: 2;
   text-align: center;
+  color: #000;
 }
 
 .Header__Navigation--Commercial a:first-child {
@@ -114,13 +115,18 @@
   border-bottom: 1px solid #000;
 }
 
+.Header__Logout {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 .Header h2 {
   text-align: left;
 }
 
 .Header input {
   padding: 10px;
-  font-size: 12px;
+  font-size: 18px;
   width: 100%;
   box-sizing: border-box;
   border: 1px solid #000;

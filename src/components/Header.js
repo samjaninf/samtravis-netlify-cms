@@ -56,13 +56,22 @@ class Header extends Component {
     }
   };
 
+  logout = () => {
+    localStorage.removeItem("password");
+    this.setState({
+      password: "",
+      open: false
+    });
+    navigate("/");
+  };
+
   render() {
     const { open, password } = this.state;
     const passwordCorrect = password === PASSWORD;
     return (
       <div className="Header" onMouseLeave={this.closeMenu}>
         <div className="Header__Navigation">
-          <Link to={`/`}>Samuel J Travis</Link>
+          <Link to={`/`}>Samuel Travis</Link>
           <div className="Header__Spacer" />
 
           {passwordCorrect && [
@@ -128,6 +137,11 @@ class Header extends Component {
               <div
                 dangerouslySetInnerHTML={{ __html: md.render(data.commercial) }}
               />
+              {passwordCorrect && (
+                <div className="Header__Logout" onClick={this.logout}>
+                  Logout
+                </div>
+              )}
             </GridColumn>
           </Grid>
         </div>
